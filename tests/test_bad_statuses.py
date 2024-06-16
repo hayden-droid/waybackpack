@@ -1,14 +1,13 @@
 #!/usr/bin/env python
 import unittest
 
-import waybackpack
+import memeitizer
 
-# https://github.com/jsvine/waybackpack/issues/36
 
 
 class Test(unittest.TestCase):
     def test_503(self):
-        asset = waybackpack.Asset(
+        asset = memeitizer.Asset(
             "https://www.amazon.com/Art-Gathering-How-Meet-Matters/dp/1594634920",
             timestamp="20190506092829",
         )

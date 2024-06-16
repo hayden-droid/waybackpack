@@ -4,27 +4,27 @@ import tempfile
 import unittest
 from unittest.mock import MagicMock
 
-import waybackpack
+import memeitizer
 
 
 class Test(unittest.TestCase):
     def test_basic(self):
         url = "https://www.dol.gov/"
-        snapshots = waybackpack.search(url, to_date=1996)
+        snapshots = memeitizer.search(url, to_date=1996)
         timestamps = [snap["timestamp"] for snap in snapshots]
-        pack = waybackpack.Pack(url, timestamps)
+        pack = memeitizer.Pack(url, timestamps)
         dirpath = tempfile.mkdtemp()
         pack.download_to(dirpath)
         shutil.rmtree(dirpath)
 
     def test_no_clobber(self):
         url = "https://whitehouse.gov/"
-        snapshots = waybackpack.search(url, to_date=20010510, from_date=20010501)
+        snapshots = memeitizer.search(url, to_date=20010510, from_date=20010501)
         timestamps = [snap["timestamp"] for snap in snapshots]
-        pack = waybackpack.Pack(url, timestamps)
+        pack = memeitizer.Pack(url, timestamps)
         dirpath = tempfile.mkdtemp()
         pack.download_to(dirpath, no_clobber=True)
-        pack = waybackpack.Pack(url, timestamps)
+        pack = memeitizer.Pack(url, timestamps)
         for asset in pack.assets:
             asset.fetch = MagicMock(return_value=b"asdfasdf")
         pack.download_to(dirpath, no_clobber=True, delay=1)

@@ -3,7 +3,7 @@ from setuptools import setup, find_packages
 import subprocess
 
 version = {}
-with open("waybackpack/version.py") as fp:
+with open("memeitizer/version.py") as fp:
     exec(fp.read(), version)
 
 base_reqs = [
@@ -11,7 +11,7 @@ base_reqs = [
 ]
 
 setup(
-    name="waybackpack",
+    name="memeitizer",
     description="Command-line tool that lets you download the entire Wayback Machine archive for a given URL.",
     classifiers=[
         "Development Status :: 3 - Alpha",
@@ -30,8 +30,8 @@ setup(
         "Programming Language :: Python :: 3.12",
     ],
     keywords="wayback machine archive",
-    author="Jeremy Singer-Vine",
-    author_email="jsvine@gmail.com",
+    author="Memeitizer Limited",
+    author_email="mail@memeitizer.com",
     url="https://github.com/jsvine/waybackpack",
     license="MIT",
     version=version["__version__"],
@@ -42,6 +42,6 @@ setup(
     },
     install_requires=base_reqs,
     entry_points={
-        "console_scripts": [ "waybackpack = waybackpack.cli:main" ]
+        "console_scripts": [ "memeitizer = memeitizer.cli:main" ]
     }
 )

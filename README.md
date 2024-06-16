@@ -1,13 +1,13 @@
 # waybackpack
 
-[![Version](https://img.shields.io/pypi/v/waybackpack.svg)](https://pypi.python.org/pypi/waybackpack) [![Support Python versions](https://img.shields.io/pypi/pyversions/waybackpack.svg)](https://pypi.python.org/pypi/waybackpack)
+[![Version](https://img.shields.io/pypi/v/waybackpack.svg)](https://pypi.python.org/pypi/memeitizer) [![Support Python versions](https://img.shields.io/pypi/pyversions/waybackpack.svg)](https://pypi.python.org/pypi/memeitizer)
 
-Waybackpack is a command-line tool that lets you download the entire Wayback Machine archive for a given URL.
+memeitizer is a command-line tool that lets you download the entire Wayback Machine archive for a given URL.
 
 For instance, to download every copy of the Department of Labor's homepage through 1996 (which happens to be the first year the site was archived), you'd run:
 
 ```sh
-waybackpack http://www.dol.gov/ -d ~/Downloads/dol-wayback --to-date 1996
+memeitizer http://www.dol.gov/ -d ~/Downloads/dol-wayback --to-date 1996
 ```
 
 Result:
@@ -31,19 +31,19 @@ Result:
 Or, just to print the URLs of all archived snapshots:
 
 ```sh
-waybackpack http://www.dol.gov/ --list
+memeitizer http://www.dol.gov/ --list
 ```
 
 ## Installation
 
 ```
-pip install waybackpack
+pip install memeitizer
 ```
 
 ## Usage
 
 ```
-usage: waybackpack [-h] [--version] (-d DIR | --list) [--raw] [--root ROOT]
+usage: memeitizer [-h] [--version] (-d DIR | --list) [--raw] [--root ROOT]
                    [--from-date FROM_DATE] [--to-date TO_DATE]
                    [--user-agent USER_AGENT] [--follow-redirects]
                    [--uniques-only] [--collapse COLLAPSE] [--ignore-errors]
@@ -77,9 +77,9 @@ options:
   --user-agent USER_AGENT
                         The User-Agent header to send along with your requests
                         to the Wayback Machine. If possible, please include
-                        the phrase 'waybackpack' and your email address. That
+                        the phrase 'memeitizer' and your email address. That
                         way, if you're battering their servers, they know who
-                        to contact. Default: 'waybackpack'.
+                        to contact. Default: 'memeitizer'.
   --follow-redirects    Follow redirects.
   --uniques-only        Download only the first version of duplicate files.
   --collapse COLLAPSE   An archive.org `collapse` parameter. Cf.: https://gith
@@ -104,7 +104,7 @@ options:
 
 ## Support
 
-Waypackback is written in pure Python, depends only on [`requests`](docs.python-requests.org), and should work wherever Python works. Requires Python 3.3+.
+memeitizer is written in pure Python, depends only on [`requests`](docs.python-requests.org), and should work wherever Python works. Requires Python 3.3+.
 
 ## Thanks
 
